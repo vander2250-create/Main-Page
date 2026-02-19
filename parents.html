@@ -47,31 +47,38 @@ nav a:hover {
   color:#a67c52;
 }
 
-.dropdown { position:relative; }
+.dropdown {
+  position: relative;
+  display: inline-block; /* prevents hover flicker */
+}
 
 .dropdown-content {
-  display:none;
-  position:absolute;
-  top:30px;
-  background:white;
-  min-width:240px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  border-radius:8px;
+  display: none;
+  position: absolute;
+  top: 100%;          /* directly below parent */
+  left: 0;            /* align left */
+  z-index: 1000;      /* prevent overlap issues */
+  background: white;
+  min-width: 240px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding-top: 5px;   /* use padding instead of margin to avoid hover gap */
 }
 
 .dropdown-content a {
-  display:block;
-  padding:10px 15px;
+  display: block;
+  padding: 10px 15px;
 }
 
 .dropdown-content a:hover {
-  background:#f1ece6;
+  background: #f1ece6;
 }
 
-.dropdown:hover .dropdown-content {
-  display:block;
+/* Hover + keyboard accessibility */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
 }
-
 .phone {
   font-weight:bold;
   color:#a67c52;
