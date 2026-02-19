@@ -12,9 +12,9 @@ body {
   font-family: Arial, sans-serif;
   background:#f8f5f0;
   color:#4b3f36;
-  line-height:1.6;
 }
 
+/* HEADER */
 header {
   background:white;
   display:flex;
@@ -27,9 +27,7 @@ header {
   z-index:1000;
 }
 
-.logo img {
-  height:60px;
-}
+.logo img { height:60px; }
 
 nav {
   display:flex;
@@ -43,9 +41,7 @@ nav a {
   font-weight:500;
 }
 
-nav a:hover {
-  color:#a67c52;
-}
+nav a:hover { color:#a67c52; }
 
 .dropdown { position:relative; }
 
@@ -85,8 +81,8 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size:38px;
-  margin-bottom:15px;
+  font-size:36px;
+  margin-bottom:10px;
 }
 
 /* CONTACT SECTION */
@@ -107,41 +103,126 @@ nav a:hover {
 
 .contact-box h2 {
   margin-bottom:20px;
-  color:#a67c52;
   text-align:center;
 }
 
-.contact-box input,
-.contact-box textarea {
-  width:100%;
+form {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+input, textarea {
   padding:12px;
-  margin-bottom:15px;
   border:1px solid #ddd;
   border-radius:6px;
   font-size:16px;
 }
 
-.contact-box textarea {
-  resize:none;
-  height:120px;
+textarea {
+  resize:vertical;
+  min-height:120px;
 }
 
-.btn {
+button {
   background:#a67c52;
   color:white;
   padding:12px;
   border:none;
   border-radius:6px;
-  width:100%;
   font-size:16px;
   cursor:pointer;
 }
 
-.btn:hover {
-  opacity:0.9;
+button:hover {
+  background:#8d6845;
 }
 
-  <footer>
+/* FOOTER */
+footer {
+  background:white;
+  padding:40px 5%;
+  text-align:center;
+  margin-top:60px;
+}
+
+.footer-nav a {
+  margin:0 10px;
+  text-decoration:none;
+  color:#4b3f36;
+}
+
+.footer-nav a:hover { color:#a67c52; }
+
+@media(max-width:900px){
+  header{flex-direction:column; gap:10px;}
+  nav{flex-wrap:wrap; justify-content:center;}
+  .hero h1{font-size:28px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="Logo.webp" alt="Ozark Aussiedoodles Logo">
+    </a>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <a href="#">Information ▾</a>
+      <div class="dropdown-content">
+        <a href="pricing.html">Pricing</a>
+        <a href="amazon.html">Ozark Aussiedoodles Amazon Storefront</a>
+      </div>
+    </div>
+
+    <a href="about.html">About Us</a>
+
+    <div class="dropdown">
+      <a href="#">Puppies ▾</a>
+      <div class="dropdown-content">
+        <a href="mini-australian-mountain-doodles.html">Mini Australian Mountain Doodles</a>
+        <a href="mini-aussiedoodles.html">Mini Aussiedoodles</a>
+        <a href="mini-bernedoodles.html">Mini Bernedoodles</a>
+        <a href="upcoming-litters.html">Upcoming Litters</a>
+      </div>
+    </div>
+
+    <a href="parents.html">Parents</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="phone">
+    📞 999-999-9999
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Get In Touch</h1>
+  <p>We would love to help you find your perfect puppy.</p>
+</section>
+
+<section class="contact-section">
+  <div class="contact-box">
+    <h2>Send Us a Message</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number">
+      <textarea placeholder="Tell us what you're looking for..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
   <div class="footer-nav">
     <a href="index.html">Home</a>
     <a href="pricing.html">Information</a>
